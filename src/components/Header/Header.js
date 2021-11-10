@@ -15,7 +15,6 @@ const Header = () => {
     <div>
       <Navbar
         className="navbar"
-        variant="dark"
         fixed="top"
         collapseOnSelect
         expand="lg"

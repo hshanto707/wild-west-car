@@ -1,9 +1,10 @@
 import React from 'react';
+import { Button } from "react-bootstrap";
 
 const NotFound = () => {
   return (
     <div>
-      <h1>not found</h1>
+      
     </div>
   );
 };
