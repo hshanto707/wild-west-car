@@ -1,0 +1,79 @@
+.navbar {
+  background-color: #1d1d1d;
+}
+
+/* .navbar-container {
+  display: flex;
+  flex-direction: column;
+} */
+
+.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.logo:hover {
+  color: white;
+}
+
+.logo-img {
+  width: 15%;
+}
+
+.logo-text {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.nav-item {
+  font-size: 18px;
+  font-weight: medium;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #1d1d1d;
+}
+
+.nav-item:hover {
+  color: #ff0050;
+  border-bottom: 1px solid #ff0050;
+}
+
+.login {
+  background-color: #ff0050 !important;
+  border: none !important;
+  font-size: 20px !important;
+  padding: 8px 40px !important;
+  width: 170px;
+}
+
+.login:hover {
+  background-color: #a30000 !important;
+}
+
+.cart {
+  color: #ffffff;
+  font-size: 22px;
+  transition: 0.5s;
+}
+
+.cart:hover {
+  color: #ff0050;
+}
+
+@media only screen and (max-width: 426px) {
+  .navbar-container {
+    display: flex;
+  }
+
+  .navbar-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-info {
+    display: flex;
+    flex-direction: column;
+  }
+}
