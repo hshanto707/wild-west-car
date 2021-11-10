@@ -1,0 +1,31 @@
+.banner {
+  background-color: #222732;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.banner-bg img {
+  width: 100%;
+}
+
+.banner-text {
+  margin: auto 50px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; */
+}
+
+.button-light {
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  color: white;
+  font-size: 20px !important;
+  padding: 8px 40px !important;
+}
+
+.button-light:hover {
+  background-color: #ff4605 !important;
+  border: 2px solid #ff4605 !important;
+}

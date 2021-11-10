@@ -35,7 +35,7 @@
   color: #222732;
 }
 
-.button {
+.button-dark {
   background-color: transparent !important;
   border: 2px solid #222732 !important;
   color: #222732;
@@ -43,7 +43,7 @@
   padding: 8px 40px !important;
 }
 
-.button:hover {
+.button-dark:hover {
   background-color: #ff4605 !important;
   border: 2px solid #ff4605 !important;
 }

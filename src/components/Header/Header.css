@@ -9,11 +9,11 @@
 
 .logo {
   text-decoration: none;
-  color: black;
+  color: #222732;
 }
 
 .logo:hover {
-  color: white;
+  color: #222732;
 }
 
 .logo-img {
@@ -26,18 +26,16 @@
 }
 
 .nav-item {
-  font-size: 18px;
-  font-weight: medium;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: #222732;
   transition: 0.5s;
   padding-bottom: 5px;
-  border-bottom: 1px solid #222732;
 }
 
 .nav-item:hover {
-  color: #ff0050;
-  border-bottom: 1px solid #ff0050;
+  color: #ff6405;
 }
 
 .login {

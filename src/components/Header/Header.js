@@ -38,6 +38,9 @@ const Header = () => {
             <NavLink className="nav-item ms-sm-5" to="/all-cars">
               All Cars
             </NavLink>
+            <NavLink className="nav-item ms-sm-5" to="/review">
+              Review
+            </NavLink>
             <NavLink className="nav-item ms-sm-5" to="/login">
               Login
             </NavLink>
@@ -85,67 +88,6 @@ const Header = () => {
           </NavbarCollapse>
         </Container>
       </Navbar>
-
-      {/* <Navbar bg="light" expand={false}>
-        <Container fluid>
-          <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="end"
-          >
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <NavLink href="#action1"  to="/myorder">Home</NavLink>
-                <NavLink href="#action2"  to="/myorder">Link</NavLink>
-                {user.displayName && (
-                  <NavLink className="nav-item ms-5" to="/myorder">
-                    My Tours
-                  </NavLink>
-                )}
-                {user.displayName && (
-                  <NavLink className="nav-item ms-5" to="/allorder">
-                    All Ordered Tours
-                  </NavLink>
-                )}
-                {user.displayName && (
-                  <NavLink className="nav-item ms-5" to="/allorder">
-                    Add Tour
-                  </NavLink>
-                )}
-                {user.email ? (
-                  <div className="login-info d-flex align-items-center ms-sm-5">
-                    {
-                      <span
-                        className="text-white fw-bold"
-                        style={{ fontSize: "19px", marginTop: "-5px" }}
-                      >
-                        Hello {user.displayName}
-                      </span>
-                    }
-                    <Button
-                      className="login ms-sm-5"
-                      onClick={logOut}
-                      style={{ width: "180px" }}
-                    >
-                      Log Out
-                      <FontAwesomeIcon className="ms-2" icon={faUser} />
-                    </Button>
-                  </div>
-                ) : (
-                  <NavLink className="ms-sm-5" to="/signin">
-                    <Button className="login">
-                      Log In
-                      <FontAwesomeIcon className="ms-2" icon={faUser} />
-                    </Button>
-                  </NavLink>
-                )}
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar> */}
     </div>
   );
 };
