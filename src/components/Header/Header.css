@@ -1,19 +1,15 @@
 .navbar {
-  background-color: rgba(27, 26, 26, 0.0);
+  background-color: #222732;
+  display: block;
 }
-
-/* .navbar-container {
-  display: flex;
-  flex-direction: column;
-} */
 
 .logo {
   text-decoration: none;
-  color: #222732;
+  color: white;
 }
 
 .logo:hover {
-  color: #222732;
+  color: white;
 }
 
 .logo-img {
@@ -29,25 +25,13 @@
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
-  color: #222732;
+  color: white;
   transition: 0.5s;
   padding-bottom: 5px;
 }
 
 .nav-item:hover {
   color: #ff6405;
-}
-
-.login {
-  background-color: #ff0050 !important;
-  border: none !important;
-  font-size: 20px !important;
-  padding: 8px 40px !important;
-  width: 170px;
-}
-
-.login:hover {
-  background-color: #a30000 !important;
 }
 
 .cart {

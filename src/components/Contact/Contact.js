@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div className="contact-us  my-5">
       <div className="container">
-        <h1 className="main-caption">Contact us</h1>
+        <h1 className="main-caption text-white">Contact us</h1>
         <form>
           <div className="row ">
             <div className="m-3 d-flex">
@@ -15,14 +15,14 @@ const Contact = () => {
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="First name"
+                  placeholder="Your Name"
                 />
               </div>
               <div className="col">
                 <input
                   type="email"
                   class="form-control"
-                  placeholder="your email address"
+                  placeholder="Your Email"
                 />
               </div>
             </div>
@@ -31,12 +31,12 @@ const Contact = () => {
                 className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="4"
-                placeholder="Send your feedback"
+                placeholder="Write Your Message"
               ></textarea>
             </div>
           </div>
           <Link>
-            <Button className="m-3 btn-success px-5">Send</Button>
+            <Button className="m-3 button-light px-5">Send</Button>
           </Link>
         </form>
       </div>

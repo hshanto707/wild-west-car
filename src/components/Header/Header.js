@@ -15,17 +15,16 @@ const Header = () => {
     <div>
       <Navbar
         className="navbar"
-        fixed="top"
         collapseOnSelect
         expand="lg"
       >
         <Container className="navbar-container">
           <NavLink
-            className="logo my-3 d-flex align-items-center justify-content-center"
+            className="logo my-2 d-flex align-items-center justify-content-center"
             style={{ width: "260px" }}
             to="/"
           >
-            <span className="logo-text ms-2">Wild West Cars</span>
+            <span className="logo-text">Wild West Cars</span>
           </NavLink>
           <Navbar.Toggle
             style={{ color: "white" }}
