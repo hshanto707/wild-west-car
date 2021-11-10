@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { Container, Navbar, Button, Offcanvas, Nav } from "react-bootstrap";
+import { Container, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 // import useAuth from "../../../hooks/useAuth";

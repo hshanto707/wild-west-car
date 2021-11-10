@@ -1,0 +1,11 @@
+.car-page {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+}
+
+.car-page img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+}

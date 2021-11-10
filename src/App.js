@@ -8,6 +8,7 @@ import MyOrders from './pages/MyOrders/MyOrders';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Pay from './pages/Pay/Pay';
+import CarPage from './pages/CarPage/CarPage';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/pay">
             <Pay></Pay>
+          </Route>
+          <Route path="/cars/:id">
+            <CarPage></CarPage>
           </Route>
           <Route path="/login">
             <Login></Login>
