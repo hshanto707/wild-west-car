@@ -4,9 +4,9 @@ import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import Login from './pages/Login/Login';
 import AllCars from './pages/AllCars/AllCars';
-import Footer from './components/Footer/Footer';
 import MyOrders from './pages/MyOrders/MyOrders';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (

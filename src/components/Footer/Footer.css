@@ -1,0 +1,47 @@
+.footer {
+  background-color: #1d1d1d;
+  padding: 50px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-text {
+  font-size: 15px;
+  color: #727273;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-link:hover .footer-text {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 426px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-top: 50px;
+  }
+
+  .our-location {
+    text-align: center;
+  }
+
+  .opening-hour {
+    margin: 0 50px;
+  }
+
+  .our-location-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

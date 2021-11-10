@@ -41,6 +41,18 @@ const Header = () => {
             <NavLink className="nav-item ms-sm-5" to="/review">
               Review
             </NavLink>
+            <NavLink className="nav-item ms-sm-5" to="/pay">
+              Pay
+            </NavLink>
+            <NavLink className="nav-item ms-sm-5" to="/review">
+              Review
+            </NavLink>
+            <NavLink className="nav-item ms-sm-5" to="/review">
+              Review
+            </NavLink>
+            <NavLink className="nav-item ms-sm-5" to="/review">
+              Review
+            </NavLink>
             <NavLink className="nav-item ms-sm-5" to="/login">
               Login
             </NavLink>
