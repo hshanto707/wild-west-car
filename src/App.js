@@ -7,6 +7,7 @@ import AllCars from './pages/AllCars/AllCars';
 import MyOrders from './pages/MyOrders/MyOrders';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Pay from './pages/Pay/Pay';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/my-orders">
             <MyOrders></MyOrders>
+          </Route>
+          <Route path="/pay">
+            <Pay></Pay>
           </Route>
           <Route path="/login">
             <Login></Login>

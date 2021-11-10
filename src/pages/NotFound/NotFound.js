@@ -13,7 +13,7 @@ const NotFound = () => {
         <h1 className="mb-sm-3 not-found-title">404</h1>
         <p className="text-white mb-sm-3 not-found-text">Page Not Found</p>
         <NavLink to="/">
-          <Button className="button not-found-btn">Go Back To Home Page</Button>
+          <Button className="button-light">Go Back To Home Page</Button>
         </NavLink>
       </div>
     </div>
