@@ -1,5 +1,4 @@
 import initializeFirebase from '../Firebase/firebase.init';
-
 import { useState, useEffect } from "react";
 import {
   getAuth,
@@ -9,6 +8,7 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
+  getIdToken,
   updateProfile,
 } from "firebase/auth";
 
@@ -20,6 +20,7 @@ const useFirebase = () => {
   const [authError, setAuthError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [admin, setAdmin] = useState(false);
+  const [token, setToken] = useState('');
 
   const googleProvider = new GoogleAuthProvider();
   const auth = getAuth();
@@ -86,6 +87,10 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        getIdToken(user)
+        .then(idToken=>{
+          setToken(idToken);
+        })
       } else {
         setUser({});
       }
@@ -94,13 +99,12 @@ const useFirebase = () => {
     return () => unsubscribe;
   }, []);
 
-  // VERIFYING ADMIN
-
-  // useEffect(()=>{
-  //   fetch(`http://localhost:5000/users/${user.email}`)
-  //   .then(res=>res.json())
-  //   .then(data=>setAdmin(data.admin))
-  // },[user.email])
+  //admin verification
+  useEffect(()=>{
+    fetch(`http://localhost:5000/users/${user.email}`)
+    .then(res=>res.json())
+    .then(data=>setAdmin(data.admin))
+  },[user.email])
 
   const logout = () => {
     setIsLoading(true);
@@ -128,6 +132,7 @@ const useFirebase = () => {
   return {
     user,
     admin,
+    token,
     isLoading,
     authError,
     registerUser,

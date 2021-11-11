@@ -4,36 +4,37 @@ import useFirebase from "./useFirebase";
 const useCart = () => {
   const { user } = useFirebase();
   const { uid } = user;
-  const [bookedTour, setBookedTour] = useState([]);
+  const [bookedCar, setBookedCar] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/cart/${uid}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length) {
-          setBookedTour(data);
+          setBookedCar(data);
         }
       });
   }, [uid]);
 
   // ADDING TO CART
 
-  function addToCart(tour) {
-    delete tour._id;
-    tour.email = user?.email;
-    tour.uid = uid;
-    tour.status = "pending";
+  function addToCart(car) {
+    delete car._id;
+    car.email = user?.email;
+    car.name = user?.displayName;
+    car.uid = uid;
+    car.status = "pending";
 
     fetch("http://localhost:5000/cart", {
       method: "post",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(tour),
+      body: JSON.stringify(car),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          const newBooked = [...bookedTour, tour];
-          setBookedTour(newBooked);
+          const newBooked = [...bookedCar, car];
+          setBookedCar(newBooked);
         }
       });
   }
@@ -47,19 +48,19 @@ const useCart = () => {
   //     .then((res) => res.json())
   //     .then((data) => {
   //       if (data.deletedCount === 1) {
-  //         const restAfterRemove = bookedTour.filter((tour) => tour._id !== id);
-  //         setBookedTour(restAfterRemove);
+  //         const restAfterRemove = bookedCar.filter((car) => car._id !== id);
+  //         setBookedCar(restAfterRemove);
   //       }
   //     });
   // };
 
   const remove = id => {
-    const newBookedTours = bookedTour.filter((tour) => tour._id !== id);
-    setBookedTour(newBookedTours);
+    const newBookedCars = bookedCar.filter((car) => car._id !== id);
+    setBookedCar(newBookedCars);
     // removeFromDb(key);
   };
 
-  return { setBookedTour, remove, addToCart, bookedTour };
+  return { setBookedCar, remove, addToCart, bookedCar };
 };
 
 export default useCart;

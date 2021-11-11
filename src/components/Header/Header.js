@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 // import useAuth from "../../../hooks/useAuth";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-// import useFirebase from "../../../hooks/useFirebase";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
-  // const { user, logOut } = useFirebase();
+  const { user, logout } = useAuth();
 
   return (
     <div>
@@ -37,32 +37,20 @@ const Header = () => {
             <NavLink className="nav-item ms-sm-5" to="/all-cars">
               All Cars
             </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/review">
-              Review
-            </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/pay">
-              Pay
-            </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/review">
-              Review
-            </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/review">
-              Review
-            </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/review">
-              Review
+            <NavLink className="nav-item ms-sm-5" to="/dashboard">
+              Dashboard
             </NavLink>
             <NavLink className="nav-item ms-sm-5" to="/login">
               Login
             </NavLink>
-            {/* {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/myorder">
-                My Bookings
+            {user.displayName && (
+              <NavLink className="nav-item ms-sm-5" to="/my-order">
+                My Orders
               </NavLink>
             )}
             {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/all-bookings">
-                All Bookings
+              <NavLink className="nav-item ms-sm-5" to="/all-orders">
+                All Orders
               </NavLink>
             )}
             {user.displayName && (
@@ -82,7 +70,7 @@ const Header = () => {
                 }
                 <Button
                   className="login ms-sm-5"
-                  onClick={logOut}
+                  onClick={logout}
                 >
                   Log Out
                   <FontAwesomeIcon className="ms-2" icon={faUser} />
@@ -95,7 +83,7 @@ const Header = () => {
                   <FontAwesomeIcon className="ms-2" icon={faUser} />
                 </Button>
               </NavLink>
-            )} */}
+            )}
           </NavbarCollapse>
         </Container>
       </Navbar>

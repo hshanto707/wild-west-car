@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
-import { Button, Form, Spinner } from "react-bootstrap";
-// import useAuth from '../../hooks/useAuth'
-import useFirebase from "../../hooks/useFirebase";
-import './Login.css'
+import useAuth from "./../../hooks/useAuth";
+import CircularProgress from "@mui/material/CircularProgress";
+import { Alert } from "@mui/material";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, signInWithGoogle, loginUser, isLoading, authError } = useFirebase();
+  const { user, signInWithGoogle, loginUser, isLoading, authError } = useAuth();
 
   const location = useLocation();
   const history = useHistory();
@@ -33,45 +37,54 @@ const Login = () => {
   };
 
   return (
-    <div class="login-container text-white">
-      <div className="container" style={{paddingTop: "200px"}}>
-          <h1 className="mb-4">Login</h1>
-          <Form onSubmit={handleLoginSubmit} className="w-25">
-            <Form.Control
-              placeholder="Your email"
-              type="email"
+    <Container>
+      <Grid container spacing={2}>
+        <Grid sx={{ mt: 8 }} item xs={12} md={12}>
+          <Typography variant="body1" gutterBottom>
+            Login
+          </Typography>
+          <form onSubmit={handleLoginSubmit}>
+            <TextField
+              sx={{ width: "75%", m: 1 }}
+              id="standard-basic"
+              label="Your email"
               name="email"
               onBlur={handleOnBlur}
-              className="mb-2"
+              variant="standard"
             />
-            <Form.Control
-              placeholder="Your password"
+            <TextField
+              sx={{ width: "75%", m: 1 }}
+              id="standard-basic"
+              label="Your password"
               type="password"
               name="password"
               onBlur={handleOnBlur}
-              className="mb-2"
+              variant="standard"
             />
             <Button
+              sx={{ width: "75%", m: 1 }}
               type="submit"
-              className="button-light mb-4"
+              variant="contained"
             >
               Login
             </Button>
             <br/>
-            <div className="d-flex text-white">
-            <h6 className="fw-normal">New User? Please</h6> 
-            <NavLink to="/register">
-              <h6 className="text-white ms-2">Register</h6>
+            <NavLink style={{ textDecoration: "none" }} to="/register">
+              <Button variant="text">New User? Please Register</Button>
             </NavLink>
-            </div>
-            {isLoading && <Spinner animation="border" variant="dark" />}
+            {isLoading && <CircularProgress />}
             {user?.email && 
-              alert("Login successfully!")
+              <Alert severity="success">Login successfully!</Alert>
             }
-            {authError && alert(`${authError}`)}
-          </Form>
-        </div>
-    </div>
+            {authError && <Alert severity="error">{authError}</Alert>}
+          </form>
+          <p>Google Sign In</p>
+          <Button onClick={handleGoogleSignIn} variant="contained">
+            Google Sign In
+          </Button>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

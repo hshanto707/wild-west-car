@@ -1,11 +1,17 @@
 import React, { useState } from "react";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import { NavLink,useHistory } from "react-router-dom";
-import useAuth from '../../hooks/useAuth';
-import { Form, Spinner, Button } from "react-bootstrap";
-import useFirebase from "../../hooks/useFirebase";
+import useAuth from "./../../hooks/useAuth";
+import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
+
 
 const Register = () => {
-   const { user, registerUser, isLoading, authError } = useFirebase();
+   const { user, registerUser, isLoading, authError } = useAuth();
     const history = useHistory()
     const [loginData, setLoginData] = useState({});
     const handleOnBlur = (e) => {
@@ -20,64 +26,75 @@ const Register = () => {
             alert(' password  not match! correct it');
             return
         }
+      // alert("hello");
       registerUser( loginData.email, loginData.password, loginData.name, history );
       e.preventDefault();
     };
 
     return (
-      <div class="login-container text-white">
-      <div className="container" style={{paddingTop: "140px"}}>
-            <h1 className="mb-4">Register</h1>
-            {!isLoading && <Form onSubmit={handleLoginSubmit} className="w-25">
-              <Form.Control
-                placeholder="Name"
+        <Container>
+      <Grid container spacing={2}>
+        <Grid sx={{ mt: 8 }} item xs={12} md={6}>
+          <Typography variant="body1" gutterBottom>
+            Register
+            {!isLoading && <form onSubmit={handleLoginSubmit}>
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your name"
                 name="name"
                 type="text"
                 required
                 onBlur={handleOnBlur}
-                className="mb-2"
+                variant="standard"
               />
-              <Form.Control
-                placeholder="Email"
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your email"
                 name="email"
                 type="email"
                 required
                 onBlur={handleOnBlur}
-                className="mb-2"
+                variant="standard"
               />
-              <Form.Control
-                placeholder="Password"
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your password"
                 type="password"
                 name="password"
                 onBlur={handleOnBlur}
-                className="mb-2"
+                variant="standard"
               />
-              <Form.Control
-                placeholder="Retype Password"
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Retype your password"
                 type="password"
                 name="password2"
                 onBlur={handleOnBlur}
-                className="mb-2"
+                variant="standard"
               />
               <Button
-                className="button-light mb-4"
+                sx={{ width: "75%", m: 1 }}
                 type="submit"
+                variant="contained"
               >
                 Register
               </Button>
-              <div className="d-flex text-white">
-            <h6 className="fw-normal">New User? Please</h6> 
-            <NavLink to="/login">
-              <h6 className="text-white ms-2">Login</h6>
-            </NavLink>
-            </div>
-            </Form>}
-            {isLoading && <Spinner animation="border" variant="dark" />}
-            {user?.email && alert("User created successfully!")}
-            {authError && alert(`${authError}`)}
+              <NavLink style={{ textDecoration: "none" }} to="/login">
+                <Button variant="text">Already Registered? Please Login</Button>
+              </NavLink>
+            </form>}
+            {isLoading && <CircularProgress />}
+            {user?.email && <Alert severity="success">User created successfully!</Alert>}
+            {authError &&  <Alert severity="error">{authError}</Alert>}
+          </Typography>
+        </Grid>
        
-      </div>
-    </div>
+      </Grid>
+    </Container>
     );
 };
 

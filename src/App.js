@@ -5,19 +5,18 @@ import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Login/Login";
 import AllCars from "./pages/AllCars/AllCars";
 import MyOrders from "./pages/MyOrders/MyOrders";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Pay from "./pages/Pay/Pay";
 import CarPage from "./pages/CarPage/CarPage";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Register from "./pages/Register/Register";
+import AllOrders from "./pages/AllOrders/AllOrders";
+import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 
 function App() {
   return (
     <div>
       <AuthProvider>
         <Router>
-          <Header></Header>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -34,8 +33,14 @@ function App() {
             <Route path="/my-orders">
               <MyOrders></MyOrders>
             </Route>
+            <Route path="/all-orders">
+              <AllOrders></AllOrders>
+            </Route>
             <Route path="/pay">
               <Pay></Pay>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
             <Route path="/cars/:id">
               <CarPage></CarPage>
@@ -50,7 +55,6 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

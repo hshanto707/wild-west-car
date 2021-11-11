@@ -2,7 +2,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
+import useAuth from "../../hooks/useAuth";
+import useFirebase from "../../hooks/useFirebase";
 import "./CarPage.css";
 
 const CarPage = () => {
@@ -27,6 +29,12 @@ const CarPage = () => {
     rating,
   } = car;
 
+  const history = useHistory();
+  
+  const { addToCart, AllContexts } = useAuth();
+  const { user } = useFirebase();
+  const { uid } = user;
+
   useEffect(() => {
     fetch(`http://localhost:5000/cars/${id}`)
       .then((res) => res.json())
@@ -50,10 +58,10 @@ const CarPage = () => {
           <h6>
             {year} - {fuelType} - {condition}
           </h6>
-        <hr />
-        <h2 className="fw-bold mb-4" style={{ color: "#ff4605" }}>
-          ${price}
-        </h2>
+          <hr />
+          <h2 className="fw-bold mb-4" style={{ color: "#ff4605" }}>
+            ${price}
+          </h2>
         </div>
         <div
           className="d-flex justify-content-around p-4 text-start"
@@ -89,27 +97,21 @@ const CarPage = () => {
             </h5>
           </div>
         </div>
-        <Button className="button-dark mt-3">Add To Cart</Button>
+        <Button
+          onClick={() => {
+            if (uid) {
+              addToCart(car);
+            } else {
+              history.push("/login");
+            }
+          }}
+          className="button-dark mt-3"
+        >
+          Add To Cart
+        </Button>
       </div>
     </div>
   );
 };
 
 export default CarPage;
-
-// _id: ObjectId("618b2fba7c0f924127927cd8")
-// name
-// make
-// Model
-// year
-// fuelType
-// price
-// img
-// description
-// transmission
-// condition
-// doors
-// color
-// engine
-// cylinders
-// rating
