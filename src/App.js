@@ -32,21 +32,15 @@ function App() {
             <Route path="/all-cars">
               <AllCars></AllCars>
             </Route>
-            <Route path="/my-orders">
-              <MyOrders></MyOrders>
-            </Route>
-            <Route path="/all-orders">
-              <AllOrders></AllOrders>
-            </Route>
             <Route path="/pay">
               <Pay></Pay>
             </Route>
             <Route path="/add-car">
               <AddCar></AddCar>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/cars/:id">
               <CarPage></CarPage>
             </PrivateRoute>

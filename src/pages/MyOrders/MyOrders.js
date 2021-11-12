@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
 import useCart from '../../hooks/useCart';
 import CartCard from '../../components/CartCard/CartCard';
 
@@ -8,7 +7,6 @@ const MyOrders = () => {
 
   return (
     <div>
-      <Header></Header>
       <h1>My Orders</h1>
       <div className="all-car">
         {bookedCar.map((car) => (

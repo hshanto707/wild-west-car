@@ -20,17 +20,24 @@ import {
 } from "react-router-dom";
 import useAuth from "./../../../hooks/useAuth";
 import MakeAdmin from './../MakeAdmin/MakeAdmin';
-import MyOder from './../MyOder/MyOder';
 import AdminRoute from './../../Login/AdminRoute/AdminRoute';
 import AllOrders from "../../AllOrders/AllOrders";
+import MyOrders from "../../MyOrders/MyOrders";
+import Pay from "../../Pay/Pay";
 import DisplayCar from "../../../components/DisplayCar/DisplayCar";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import AddCar from "../../AddCar/AddCar";
+import DashboardHome from "../../DashboardHome/DashboardHome";
+import ClientReview from "../../ClientReview/ClientReview"
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { admin, user } = useAuth();
+  const { admin, logout } = useAuth();
 
   let { path, url } = useRouteMatch();
 
@@ -40,36 +47,52 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <h1>slkdfjlsdfj</h1>
-      <Divider />
-      <Link to="/appointment" style={{ textDecoration: "none", color: "blue" }}>
-        <Button color="inherit">Appointment</Button>
-      </Link>
-      { !admin && <Link to={`${url}`} style={{ textDecoration: "none", color: "blue" }}>
+      <NavLink className="nav-item text-dark text-center" to="/">
+        <h1 className="mt-2" style={{color: "#ff4605", fontWeight: "bold"}}>Home</h1>
+      </NavLink>
+      <Divider className="mt-1" />
+      { !admin && <Link to={`${url}`} style={{ textDecoration: "none", color: "#ff4605" }}>
         <Button color="inherit">My Orders</Button>
-      </Link>}
+      </Link>}<br />
+      { !admin && <Link to={`${url}/pay`} style={{ textDecoration: "none", color: "#ff4605" }}>
+        <Button color="inherit">Payment</Button>
+      </Link>}<br />
+      { !admin && <Link to={`${url}/review`} style={{ textDecoration: "none", color: "#ff4605" }}>
+        <Button color="inherit">Review</Button>
+      </Link>}<br />
+      { !admin && <Button
+                  className="button-light ms-sm-5"
+                  onClick={logout}
+                >
+                  Log Out
+                  <FontAwesomeIcon className="ms-2" icon={faUser} />
+                </Button>}
+      
   
      { admin &&
         <Box>
           <Link
             to={`${url}/make-admin`}
-            style={{ textDecoration: "none", color: "blue" }}
+            style={{ textDecoration: "none", color: "#ff4605" }}
           >
-            <Button color="inherit">Make Admin</Button>
+            <Button color="inherit" style={{ fontSize: "18px" }}>Make Admin</Button>
           </Link>
           <br/>
           <Link
             to={`${url}/all-orders`}
-            style={{ textDecoration: "none", color: "blue" }}
+            style={{ textDecoration: "none", color: "#ff4605" }}
           >
-            <Button color="inherit">All Orders</Button>
+            <Button color="inherit" style={{ fontSize: "18px" }}>All Orders</Button>
           </Link>
+          <br/>
           <Link
-            to={`${url}/all-cars`}
-            style={{ textDecoration: "none", color: "blue" }}
+            to={`${url}/add-car`}
+            style={{ textDecoration: "none", color: "#ff4605" }}
           >
-            <Button color="inherit">Add Car</Button>
+            <Button color="inherit" style={{ fontSize: "18px" }}>Add Car</Button>
           </Link>
+          <br/>
+          <Button color="inherit" onClick={logout} style={{ textDecoration: "none", color: "#ff4605", fontSize: "18px" }}>Log Out</Button>
         </Box>
       }
     </div>
@@ -98,9 +121,7 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Dashboard
-          </Typography>
+          <h2 className="mt-2">Dashboard</h2>
         </Toolbar>
       </AppBar>
       <Box
@@ -152,10 +173,16 @@ function Dashboard(props) {
         <Toolbar />
 
         <Switch>
-        <Route exact path={path}>
-            <MyOder></MyOder>
+          <Route exact path={path}>
+            <DashboardHome></DashboardHome>
           </Route>
-          <AdminRoute path={`${path}/makeAdmin`}>
+          <Route path={`${path}/pay`}>
+            <Pay></Pay>
+          </Route>
+          <Route path={`${path}/review`}>
+            <ClientReview></ClientReview>
+          </Route>
+          <AdminRoute path={`${path}/make-admin`}>
             <MakeAdmin></MakeAdmin>
           </AdminRoute>
           <Route path={`${path}/all-orders`}>
@@ -163,6 +190,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/all-cars`}>
             <DisplayCar></DisplayCar>
+          </Route>
+          <Route path={`${path}/add-car`}>
+            <AddCar></AddCar>
           </Route>
         </Switch>
       </Box>

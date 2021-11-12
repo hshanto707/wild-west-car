@@ -27,8 +27,7 @@ const AddCar = () => {
     };
     return (
       <div>
-        <Header></Header>
-        <h1 className="mt-5 text-center text-info">Please Add Trips</h1>
+      <h1 className="dash-title">ADD CAR /</h1>
         <div className=" mt-5">
           <div className=" justify-content-center">
             <div className="login-form">

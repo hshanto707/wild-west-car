@@ -28,7 +28,7 @@ const Card = (props) => {
       <div className="text-center mt-auto">
       <Button
           onClick={() => {remove(_id)}}
-          className="button-dark mt-3"
+          className="button-light my-3"
         >
           Cancel Order
         </Button>

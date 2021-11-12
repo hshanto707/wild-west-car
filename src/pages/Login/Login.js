@@ -10,6 +10,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Alert } from "@mui/material";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import './Login.css'
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
@@ -30,9 +31,6 @@ const Login = () => {
     loginUser(loginData.email, loginData.password, history, location);
     e.preventDefault();
   };
-  const handleGoogleSignIn = () => {
-    signInWithGoogle(history, location);
-  };
 
   const Login = () => {
     signInWithGoogle(history, location);
@@ -41,15 +39,15 @@ const Login = () => {
   return (
     <div>
       <Header></Header>
-      <Container>
-        <Grid container spacing={2}>
-          <Grid sx={{ mt: 8 }} item xs={12} md={12}>
+      <div>
+        <Grid container>
+          <Grid sx={{ my: 'auto', marginLeft: '20px' }} item xs={12} md={4}>
             <Typography variant="body1" gutterBottom>
               Login
             </Typography>
             <form onSubmit={handleLoginSubmit}>
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "100%" }}
                 id="standard-basic"
                 label="Your email"
                 name="email"
@@ -82,13 +80,12 @@ const Login = () => {
               )}
               {authError && <Alert severity="error">{authError}</Alert>}
             </form>
-            <p>Google Sign In</p>
-            <Button onClick={handleGoogleSignIn} variant="contained">
-              Google Sign In
-            </Button>
+          </Grid>
+          <Grid item  xs={12} md={7} sx={{marginLeft:'auto'}}>
+            <img src="https://www.india.com/wp-content/uploads/2021/09/21C0550_001.jpg" alt="" className="clipping-img" />
           </Grid>
         </Grid>
-      </Container>
+      </div>
       <Footer></Footer>
     </div>
   );

@@ -1,0 +1,9 @@
+.dashboard-home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 85vh;
+}
+.dashboard-home img {
+  width: 30%;
+}

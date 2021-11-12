@@ -33,7 +33,7 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2>Make an Admin</h2>
+          <h1 className="dash-title">MAKE ADMIN /</h1>
             <form onSubmit={handleAdminSubmit}>
               <TextField 
                label="Email"
@@ -41,7 +41,7 @@ const MakeAdmin = () => {
                sx={{width:'50%'}}
                onBlur={handleOnBlur}
                variant="standard" />
-              <Button type="submit" variant="contained">Make Admin</Button>
+              <Button type="submit" variant="contained" className="button-dark text-dark">Proceed</Button>
             </form>
             { success && 
               <Alert severity="success">Made admin successfully!</Alert>

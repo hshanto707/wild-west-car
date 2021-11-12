@@ -29,3 +29,8 @@
   background-color: #ff4605 !important;
   border: 2px solid #ff4605 !important;
 }
+
+.button-light:focus {
+  border: 2px solid white !important;
+  color: white;
+}
