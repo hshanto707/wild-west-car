@@ -21,7 +21,7 @@ const useCart = () => {
   function addToCart(car) {
     delete car._id;
     car.email = user?.email;
-    car.name = user?.displayName;
+    car.displayName = user?.displayName;
     car.uid = uid;
     car.status = "pending";
 
@@ -35,29 +35,29 @@ const useCart = () => {
         if (data.insertedId) {
           const newBooked = [...bookedCar, car];
           setBookedCar(newBooked);
+          alert("Successfully Aadded To Cart")
         }
       });
   }
 
   // REMOVE FROM CART
 
-  // const remove = (id) => {
-  //   fetch(`http://localhost:5000/cart/${id}`, {
-  //     method: "delete",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.deletedCount === 1) {
-  //         const restAfterRemove = bookedCar.filter((car) => car._id !== id);
-  //         setBookedCar(restAfterRemove);
-  //       }
-  //     });
-  // };
-
-  const remove = id => {
-    const newBookedCars = bookedCar.filter((car) => car._id !== id);
-    setBookedCar(newBookedCars);
-    // removeFromDb(key);
+  const remove = (id) => {
+    const confirm = window.confirm("are you sure?");
+    if(confirm) {
+      fetch(`http://localhost:5000/cart/${id}`, {
+      method: "delete",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount === 1) {
+          const restAfterRemove = bookedCar.filter((car) => car._id !== id);
+          setBookedCar(restAfterRemove);
+        }
+        alert("Car Removed");
+        window.location.reload(true);
+      });
+    }
   };
 
   return { setBookedCar, remove, addToCart, bookedCar };

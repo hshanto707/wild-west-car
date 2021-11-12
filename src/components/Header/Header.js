@@ -44,7 +44,7 @@ const Header = () => {
               Login
             </NavLink>
             {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/my-order">
+              <NavLink className="nav-item ms-sm-5" to="/my-orders">
                 My Orders
               </NavLink>
             )}

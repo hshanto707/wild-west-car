@@ -23,7 +23,7 @@ import MakeAdmin from './../MakeAdmin/MakeAdmin';
 import MyOder from './../MyOder/MyOder';
 import AdminRoute from './../../Login/AdminRoute/AdminRoute';
 import AllOrders from "../../AllOrders/AllOrders";
-import AllCars from "../../AllCars/AllCars";
+import DisplayCar from "../../../components/DisplayCar/DisplayCar";
 
 const drawerWidth = 200;
 
@@ -40,7 +40,7 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
+      <h1>slkdfjlsdfj</h1>
       <Divider />
       <Link to="/appointment" style={{ textDecoration: "none", color: "blue" }}>
         <Button color="inherit">Appointment</Button>
@@ -162,7 +162,7 @@ function Dashboard(props) {
             <AllOrders></AllOrders>
           </Route>
           <Route path={`${path}/all-cars`}>
-            <AllCars></AllCars>
+            <DisplayCar></DisplayCar>
           </Route>
         </Switch>
       </Box>

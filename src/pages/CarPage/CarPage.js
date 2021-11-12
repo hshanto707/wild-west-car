@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import useFirebase from "../../hooks/useFirebase";
+import useCart from "../../hooks/useCart";
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import "./CarPage.css";
 
 const CarPage = () => {
@@ -31,8 +33,8 @@ const CarPage = () => {
 
   const history = useHistory();
   
-  const { addToCart, AllContexts } = useAuth();
-  const { user } = useFirebase();
+  const { addToCart } = useCart();
+  const { user } = useAuth();
   const { uid } = user;
 
   useEffect(() => {
@@ -42,7 +44,9 @@ const CarPage = () => {
       .catch((err) => console.log(err));
   }, [id]);
   return (
-    <div className="car-page container">
+    <div>
+      <Header></Header>
+      <div className="car-page container">
       <div className="tour-hero">
         <div className="tour-hero-bg">
           <img src={img} alt="" className="tour-background my-4" />
@@ -110,6 +114,8 @@ const CarPage = () => {
           Add To Cart
         </Button>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

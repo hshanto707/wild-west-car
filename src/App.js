@@ -11,6 +11,7 @@ import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Register from "./pages/Register/Register";
 import AllOrders from "./pages/AllOrders/AllOrders";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import AddCar from "./pages/AddCar/AddCar";
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route path="/pay">
               <Pay></Pay>
+            </Route>
+            <Route path="/add-car">
+              <AddCar></AddCar>
             </Route>
             <Route path="/dashboard">
               <Dashboard></Dashboard>

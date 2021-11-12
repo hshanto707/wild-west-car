@@ -1,27 +1,20 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import Card from '../../components/Card/Card';
 import useCarData from '../../hooks/useCarData';
-import Card from '../Card/Card';
-import './DisplayCar.css'
+import '../FeaturedCar/FeaturedCar.css'
 
 const DisplayCar = () => {
-
   const [cars] = useCarData();
-  console.log(cars);
 
   return (
-    <div className="container section-container text-center">
+    <div className="container section-container text-center mb-5">
       <h4 className="fw-bold text-start">Hand Picked</h4>
-      <h1 className="fw-bold mb-5 text-start">Featured Listings</h1>
+      <h1 className="fw-bold mb-5 text-start">All Listings</h1>
       <div className="all-car">
-        {cars.slice(0, 6).map((car) => (
+        {cars.map((car) => (
           <Card car={car} key={car._id}></Card>
         ))}
       </div>
-      <NavLink to="/all-cars">
-        <Button className="button-dark my-3">See All</Button>
-      </NavLink>
     </div>
   );
 };

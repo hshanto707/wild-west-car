@@ -8,6 +8,8 @@ import { NavLink, useLocation, useHistory } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Alert } from "@mui/material";
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
@@ -25,66 +27,70 @@ const Login = () => {
   };
   const handleLoginSubmit = (e) => {
     // alert("hello");
-    loginUser(loginData.email, loginData.password, history, location );
+    loginUser(loginData.email, loginData.password, history, location);
     e.preventDefault();
   };
   const handleGoogleSignIn = () => {
     signInWithGoogle(history, location);
   };
 
-const Login = () => {
+  const Login = () => {
     signInWithGoogle(history, location);
   };
 
   return (
-    <Container>
-      <Grid container spacing={2}>
-        <Grid sx={{ mt: 8 }} item xs={12} md={12}>
-          <Typography variant="body1" gutterBottom>
-            Login
-          </Typography>
-          <form onSubmit={handleLoginSubmit}>
-            <TextField
-              sx={{ width: "75%", m: 1 }}
-              id="standard-basic"
-              label="Your email"
-              name="email"
-              onBlur={handleOnBlur}
-              variant="standard"
-            />
-            <TextField
-              sx={{ width: "75%", m: 1 }}
-              id="standard-basic"
-              label="Your password"
-              type="password"
-              name="password"
-              onBlur={handleOnBlur}
-              variant="standard"
-            />
-            <Button
-              sx={{ width: "75%", m: 1 }}
-              type="submit"
-              variant="contained"
-            >
+    <div>
+      <Header></Header>
+      <Container>
+        <Grid container spacing={2}>
+          <Grid sx={{ mt: 8 }} item xs={12} md={12}>
+            <Typography variant="body1" gutterBottom>
               Login
+            </Typography>
+            <form onSubmit={handleLoginSubmit}>
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your email"
+                name="email"
+                onBlur={handleOnBlur}
+                variant="standard"
+              />
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your password"
+                type="password"
+                name="password"
+                onBlur={handleOnBlur}
+                variant="standard"
+              />
+              <Button
+                sx={{ width: "75%", m: 1 }}
+                type="submit"
+                variant="contained"
+              >
+                Login
+              </Button>
+              <br />
+              <NavLink style={{ textDecoration: "none" }} to="/register">
+                <Button variant="text">New User? Please Register</Button>
+              </NavLink>
+              {isLoading && <CircularProgress />}
+              {user?.email && (
+                <Alert severity="success">Login successfully!</Alert>
+              )}
+              {authError && <Alert severity="error">{authError}</Alert>}
+            </form>
+            <p>Google Sign In</p>
+            <Button onClick={handleGoogleSignIn} variant="contained">
+              Google Sign In
             </Button>
-            <br/>
-            <NavLink style={{ textDecoration: "none" }} to="/register">
-              <Button variant="text">New User? Please Register</Button>
-            </NavLink>
-            {isLoading && <CircularProgress />}
-            {user?.email && 
-              <Alert severity="success">Login successfully!</Alert>
-            }
-            {authError && <Alert severity="error">{authError}</Alert>}
-          </form>
-          <p>Google Sign In</p>
-          <Button onClick={handleGoogleSignIn} variant="contained">
-            Google Sign In
-          </Button>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+      <Footer></Footer>
+    </div>
   );
 };
 
