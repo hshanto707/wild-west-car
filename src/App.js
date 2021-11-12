@@ -12,6 +12,7 @@ import Register from "./pages/Register/Register";
 import AllOrders from "./pages/AllOrders/AllOrders";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import AddCar from "./pages/AddCar/AddCar";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -46,9 +47,9 @@ function App() {
             <Route path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
-            <Route path="/cars/:id">
+            <PrivateRoute path="/cars/:id">
               <CarPage></CarPage>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

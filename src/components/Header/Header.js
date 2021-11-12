@@ -18,7 +18,8 @@ const Header = () => {
         collapseOnSelect
         expand="lg"
       >
-        <Container className="navbar-container">
+        <Container className="navbar-container d-flex justify-content-between">
+          <div>
           <NavLink
             className="logo my-2 d-flex align-items-center justify-content-center"
             style={{ width: "260px" }}
@@ -30,46 +31,29 @@ const Header = () => {
             style={{ color: "white" }}
             aria-controls="navbarScroll"
           />
-          <NavbarCollapse className="navbar-items ms-auto align-items-center">
+          </div>
+          <NavbarCollapse className="navbar-items align-items-center">
             <NavLink className="nav-item ms-sm-5" to="/">
               Home
             </NavLink>
             <NavLink className="nav-item ms-sm-5" to="/all-cars">
               All Cars
             </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/dashboard">
-              Dashboard
-            </NavLink>
-            <NavLink className="nav-item ms-sm-5" to="/login">
-              Login
-            </NavLink>
-            {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/my-orders">
-                My Orders
-              </NavLink>
-            )}
-            {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/all-orders">
-                All Orders
-              </NavLink>
-            )}
-            {user.displayName && (
-              <NavLink className="nav-item ms-sm-5" to="/allorder">
-                Add A Tour
-              </NavLink>
-            )}
             {user.email ? (
               <div className="login-info d-flex align-items-center ms-sm-5">
+                <NavLink className="nav-item ms-sm-3" to="/dashboard">
+                  Dashboard
+                </NavLink>
                 {
                   <span
-                    className="text-white fw-bold"
+                    className="text-white fw-bold ms-sm-5"
                     style={{ fontSize: "19px", marginTop: "-5px" }}
                   >
                     Hello {user.displayName}
                   </span>
                 }
                 <Button
-                  className="login ms-sm-5"
+                  className="button-light ms-sm-5"
                   onClick={logout}
                 >
                   Log Out
@@ -78,7 +62,7 @@ const Header = () => {
               </div>
             ) : (
               <NavLink className="ms-sm-5" to="/login">
-                <Button className="login">
+                <Button className="button-light">
                   Log In
                   <FontAwesomeIcon className="ms-2" icon={faUser} />
                 </Button>

@@ -12,11 +12,11 @@ const Footer = () => {
         <div>
           <h3 className="footer-title text-white mb-4">About Us</h3>
           <div className="text-lg-start">
-            <p className="footer-text">Energy Zone is an American franchisor and 
-            <br />operator of fitness centers based in New York City.
+            <p className="footer-text">Wild West Cars is an reputated car dealership 
+            <br />company of automobile industry in New York City.
             <br />
-            <br />It has 44 clubs, making it one of the largest
-            <br />fitness club franchises by number of members 
+            <br />We have 33 brunches, making it one of the largest
+            <br />car dealership company by number of members 
             <br />and locations.</p>
           </div>
           <div>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3 className="footer-title text-white mb-4">Car Brands</h3>
-          <div className="text-center">
+          <div>
             <Link className="footer-link"><p className="footer-text">BMW</p></Link>
             <Link className="footer-link"><p className="footer-text">Ferrari</p></Link>
             <Link className="footer-link"><p className="footer-text">Lamborghini</p></Link>
