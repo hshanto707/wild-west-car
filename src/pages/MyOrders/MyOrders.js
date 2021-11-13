@@ -7,7 +7,7 @@ const MyOrders = () => {
 
   return (
     <div>
-      <h1>My Orders</h1>
+    <h1 className="dash-title">My Orders /</h1>
       <div className="all-car">
         {bookedCar.map((car) => (
           <CartCard car={car} key={car._id}></CartCard>

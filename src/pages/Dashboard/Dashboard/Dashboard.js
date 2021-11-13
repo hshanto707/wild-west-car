@@ -51,22 +51,16 @@ function Dashboard(props) {
         <h1 className="mt-2" style={{color: "#ff4605", fontWeight: "bold"}}>Home</h1>
       </NavLink>
       <Divider className="mt-1" />
-      { !admin && <Link to={`${url}`} style={{ textDecoration: "none", color: "#ff4605" }}>
-        <Button color="inherit">My Orders</Button>
+      { !admin && <Link to={`${url}/my-orders`} style={{ textDecoration: "none", color: "#ff4605" }}>
+        <Button color="inherit" style={{ fontSize: "18px" }}>My Orders</Button>
       </Link>}<br />
       { !admin && <Link to={`${url}/pay`} style={{ textDecoration: "none", color: "#ff4605" }}>
-        <Button color="inherit">Payment</Button>
+        <Button color="inherit" style={{ fontSize: "18px" }}>Payment</Button>
       </Link>}<br />
       { !admin && <Link to={`${url}/review`} style={{ textDecoration: "none", color: "#ff4605" }}>
-        <Button color="inherit">Review</Button>
+        <Button color="inherit" style={{ fontSize: "18px" }}>Review</Button>
       </Link>}<br />
-      { !admin && <Button
-                  className="button-light ms-sm-5"
-                  onClick={logout}
-                >
-                  Log Out
-                  <FontAwesomeIcon className="ms-2" icon={faUser} />
-                </Button>}
+      { !admin && <Button color="inherit" onClick={logout} style={{ textDecoration: "none", color: "#ff4605", fontSize: "18px" }}>Log Out</Button>}
       
   
      { admin &&
@@ -187,6 +181,9 @@ function Dashboard(props) {
           </AdminRoute>
           <Route path={`${path}/all-orders`}>
             <AllOrders></AllOrders>
+          </Route>
+          <Route path={`${path}/my-orders`}>
+            <MyOrders></MyOrders>
           </Route>
           <Route path={`${path}/all-cars`}>
             <DisplayCar></DisplayCar>

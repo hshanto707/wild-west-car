@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import './CartCard.css'
 import useCart from '../../hooks/useCart';
