@@ -33,12 +33,12 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-          <h1 className="dash-title">MAKE ADMIN /</h1>
+          <h1 className="dash-title mb-3">MAKE ADMIN /</h1>
             <form onSubmit={handleAdminSubmit}>
               <TextField 
                label="Email"
                type="email"
-               sx={{width:'50%'}}
+               sx={{width:'50%', mr: 3}}
                onBlur={handleOnBlur}
                variant="standard" />
               <Button type="submit" variant="contained" className="button-dark text-dark">Proceed</Button>

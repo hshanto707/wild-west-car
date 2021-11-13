@@ -42,12 +42,10 @@ const Login = () => {
       <div>
         <Grid container>
           <Grid sx={{ my: 'auto', marginLeft: '20px' }} item xs={12} md={4}>
-            <Typography variant="body1" gutterBottom>
-              Login
-            </Typography>
+          <h1 style={{color: "#222732"}}>Login</h1> 
             <form onSubmit={handleLoginSubmit}>
               <TextField
-                sx={{ width: "100%" }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Your email"
                 name="email"
@@ -55,7 +53,7 @@ const Login = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Your password"
                 type="password"
@@ -64,9 +62,10 @@ const Login = () => {
                 variant="standard"
               />
               <Button
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", m: 3 }}
                 type="submit"
                 variant="contained"
+                className="button-dark"
               >
                 Login
               </Button>

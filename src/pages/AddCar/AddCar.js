@@ -1,8 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import useAuth from './../../hooks/useAuth';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 
 const AddCar = () => {
     const { user } = useAuth();
@@ -26,116 +24,119 @@ const AddCar = () => {
       reset();
     };
     return (
-      <div>
-      <h1 className="dash-title">ADD CAR /</h1>
+      <div className="text-center">
+      <h1 className="dash-title text-start">ADD CAR /</h1>
         <div className=" mt-5">
           <div className=" justify-content-center">
             <div className="login-form">
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(onSubmit)} className="">
                 <input 
                   {...register("name")}
-                  placeholder="Bike Name"
-                  className="p-2 me-1 mb-2 input-style border border-2 rounded border-primary"
+                  placeholder="Car Name"
+                  className="p-2 me-2 mb-2 input-style border border-2 rounded border-dark"
                 />
+
                 <input
                   {...register("make")}
-                  placeholder="Bike maker"
-                  className="p-2 ms-1 mb-2 input-style border border-2 rounded border-primary"
+                  placeholder="Brand"
+                  className="p-2 me-2 mb-2 input-style border border-2 rounded border-dark"
                 />
-                <br />
+                
                 <input 
                   {...register("year")}
-                  placeholder="Realise Year"
-                  className="p-2 me-1 mb-2 input-style border border-2 rounded border-primary"
+                  type="number"
+                  placeholder="Year"
+                  className="p-2 me-2 mb-2 input-style border border-2 rounded border-dark"
                 />
+
                 <input
                   {...register("fuelType")}
-                  placeholder=" Fuel Name"
-                  className="p-2 ms-1 mb-2 input-style border border-2 rounded border-primary"
+                  placeholder=" Fuel Type"
+                  className="p-2 me-2 mb-2 input-style border border-2 rounded border-dark"
                 />
-                <br />
 
                 <input
                   {...register("description")}
                   placeholder="Description"
-                   className="p-2 pb-5  w-50 border border-2 rounded border-primary"
+                   className="p-2 me-2 border border-2 rounded border-dark"
                 />
-                <br />
   
                 <input
                   {...register("img", { required: true })}
-                  placeholder="Image Link"
-                  className="p-2 me-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Image URL"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
                 
                 <input
                   {...register("price")}
                   type="number"
-                  placeholder="price"
-                  className="p-2 ms-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Price"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
 
-                 <br />
                 <input
                   {...register("transmission")}
-                  placeholder="transmission"
+                  placeholder="Transmission"
                   type="text"
-                  className="p-2 me-1 mt-2 input-style border border-2 rounded border-primary"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
+
                 <input 
                   {...register("condition")}
                   type="text"
-                  placeholder="Bike Condition"
-                  className="p-2 ms-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Condition"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
-                <br />
+                
                 <input
                   {...register("doors")}
-                  placeholder="Number of Door "
-                  type="text"
-                  className="p-2 me-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Numbers of Door "
+                  type="number"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
+
                 <input 
                   {...register("color")}
                   type="text"
-                  placeholder="Bike Color"
-                  className="p-2 ms-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Color"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
-                <br />
+                
                 <input
                   {...register("engine")}
                   placeholder="Engine Type "
                   type="text"
-                  className="p-2 me-1 mt-2 input-style border border-2 rounded border-primary"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
+
                 <input 
                   {...register("cylinders")}
                   type="number"
-                  placeholder="Bike cylinders"
-                  className="p-2 ms-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder="Cylinders Number"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
-                 <br />
+                
                 <input
                   {...register("rating")}
-                  placeholder="Bike Rating  "
+                  placeholder="Rating"
                   type="number"
-                  className="p-2 me-1 mt-2 input-style border border-2 rounded border-primary"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
+                
                 <input 
                   {...register("model")}
                   type="text"
-                  placeholder=" Model Bike "
-                  className="p-2 ms-1 mt-2 input-style border border-2 rounded border-primary"
+                  placeholder=" Model Bike"
+                  className="p-2 me-2 mt-2 input-style border border-2 rounded border-dark"
                 />
                 <br />
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input type="submit" value="Add" className="btn btn-info text-white  m-3 w-25" />
+                <input type="submit" value="Add" className="button-dark m-3" />
               </form>
             </div>
           </div>
         </div>
-      <Footer></Footer>
       </div>
     );
   };

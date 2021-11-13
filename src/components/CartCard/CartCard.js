@@ -5,10 +5,10 @@ import './CartCard.css'
 import useCart from '../../hooks/useCart';
 
 const Card = (props) => {
-  const {_id, name, price, img, description, rating} = props.car;
+  const {_id, name, price, img, description, rating, email} = props.car;
   const history = useHistory();
   
-  const { remove } = useCart();
+  const { removeFromCart, removeFromCar } = useCart();
   
   // const { addToCart, AllContexts } = useAuth();
   // const { user } = useFirebase();
@@ -25,12 +25,18 @@ const Card = (props) => {
         <h5 className="price fw-normal mb-3">Price: ${price}</h5>
       </div>
       <div className="text-center mt-auto">
-      <Button
-          onClick={() => {remove(_id)}}
+      {email ? <Button
+          onClick={() => {removeFromCart(_id)}}
           className="button-light my-3"
         >
-          Cancel Order
-        </Button>
+          Cancel
+        </Button> : 
+        <Button
+        onClick={() => {removeFromCar(_id)}}
+        className="button-light my-3"
+      >
+        Delete
+      </Button>}
       </div>
     </div>
   );

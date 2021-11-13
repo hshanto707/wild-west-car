@@ -42,7 +42,7 @@ const useCart = () => {
 
   // REMOVE FROM CART
 
-  const remove = (id) => {
+  const removeFromCart = (id) => {
     const confirm = window.confirm("are you sure?");
     if(confirm) {
       fetch(`http://localhost:5000/cart/${id}`, {
@@ -60,7 +60,27 @@ const useCart = () => {
     }
   };
 
-  return { setBookedCar, remove, addToCart, bookedCar };
+  // REMOVE FROM CAR
+
+  const removeFromCar = (id) => {
+    const confirm = window.confirm("are you sure?");
+    if(confirm) {
+      fetch(`http://localhost:5000/cars/${id}`, {
+      method: "delete",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount === 1) {
+          const restAfterRemove = bookedCar.filter((car) => car._id !== id);
+          setBookedCar(restAfterRemove);
+        }
+        alert("Car Removed");
+        window.location.reload(true);
+      });
+    }
+  };
+
+  return { setBookedCar, removeFromCart, removeFromCar, addToCart, bookedCar };
 };
 
 export default useCart;

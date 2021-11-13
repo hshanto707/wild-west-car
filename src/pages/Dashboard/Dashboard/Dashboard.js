@@ -31,6 +31,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import AddCar from "../../AddCar/AddCar";
 import DashboardHome from "../../DashboardHome/DashboardHome";
 import ClientReview from "../../ClientReview/ClientReview"
+import ManageCars from "../../ManageCars/ManageCars";
 
 const drawerWidth = 200;
 
@@ -66,13 +67,6 @@ function Dashboard(props) {
      { admin &&
         <Box>
           <Link
-            to={`${url}/make-admin`}
-            style={{ textDecoration: "none", color: "#ff4605" }}
-          >
-            <Button color="inherit" style={{ fontSize: "18px" }}>Make Admin</Button>
-          </Link>
-          <br/>
-          <Link
             to={`${url}/all-orders`}
             style={{ textDecoration: "none", color: "#ff4605" }}
           >
@@ -80,10 +74,24 @@ function Dashboard(props) {
           </Link>
           <br/>
           <Link
+            to={`${url}/manage-cars`}
+            style={{ textDecoration: "none", color: "#ff4605" }}
+          >
+            <Button color="inherit" style={{ fontSize: "18px" }}>Manage Cars</Button>
+          </Link>
+          <br/>
+          <Link
             to={`${url}/add-car`}
             style={{ textDecoration: "none", color: "#ff4605" }}
           >
             <Button color="inherit" style={{ fontSize: "18px" }}>Add Car</Button>
+          </Link>
+          <br/>
+          <Link
+            to={`${url}/make-admin`}
+            style={{ textDecoration: "none", color: "#ff4605" }}
+          >
+            <Button color="inherit" style={{ fontSize: "18px" }}>Create Admin</Button>
           </Link>
           <br/>
           <Button color="inherit" onClick={logout} style={{ textDecoration: "none", color: "#ff4605", fontSize: "18px" }}>Log Out</Button>
@@ -181,6 +189,9 @@ function Dashboard(props) {
           </AdminRoute>
           <Route path={`${path}/all-orders`}>
             <AllOrders></AllOrders>
+          </Route>
+          <Route path={`${path}/manage-cars`}>
+            <ManageCars></ManageCars>
           </Route>
           <Route path={`${path}/my-orders`}>
             <MyOrders></MyOrders>

@@ -20,7 +20,7 @@
 .button-light {
   background-color: transparent !important;
   border: 2px solid white !important;
-  color: white;
+  color: white !important;
   font-size: 20px !important;
   padding: 8px 40px !important;
 }

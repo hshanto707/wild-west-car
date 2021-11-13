@@ -8,6 +8,8 @@ import { NavLink,useHistory } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 
 const Register = () => {
@@ -32,14 +34,15 @@ const Register = () => {
     };
 
     return (
-        <Container>
-      <Grid container spacing={2}>
-        <Grid sx={{ mt: 8 }} item xs={12} md={6}>
-          <Typography variant="body1" gutterBottom>
-            Register
+      <div>
+      <Header></Header>
+      <div>
+        <Grid container>
+          <Grid sx={{ my: 'auto', marginLeft: '20px' }} item xs={12} md={4}>
+            <h1 style={{color: "#222732"}}>Register</h1>  
             {!isLoading && <form onSubmit={handleLoginSubmit}>
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Your name"
                 name="name"
@@ -49,7 +52,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Your email"
                 name="email"
@@ -59,27 +62,30 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Your password"
                 type="password"
                 name="password"
+                required
                 onBlur={handleOnBlur}
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", ml: 3 }}
                 id="standard-basic"
                 label="Retype your password"
                 type="password"
                 name="password2"
+                required
                 onBlur={handleOnBlur}
                 variant="standard"
               />
               <Button
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", m: 3 }}
                 type="submit"
                 variant="contained"
+                className="button-dark"
               >
                 Register
               </Button>
@@ -87,14 +93,16 @@ const Register = () => {
                 <Button variant="text">Already Registered? Please Login</Button>
               </NavLink>
             </form>}
-            {isLoading && <CircularProgress />}
             {user?.email && <Alert severity="success">User created successfully!</Alert>}
             {authError &&  <Alert severity="error">{authError}</Alert>}
-          </Typography>
+          </Grid>
+          <Grid item  xs={12} md={7} sx={{marginLeft:'auto'}}>
+            <img src="https://www.india.com/wp-content/uploads/2021/09/21C0550_001.jpg" alt="" className="clipping-img" />
+          </Grid>
         </Grid>
-       
-      </Grid>
-    </Container>
+      </div>
+      <Footer></Footer>
+    </div>
     );
 };
 

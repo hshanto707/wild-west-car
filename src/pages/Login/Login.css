@@ -2,3 +2,8 @@
   background: url('https://www.tracker.co.uk/application/files/thumbnails/hero_banner_medium/1015/2872/5511/home-banner.png');
   height: 650px;
 }
+
+.clipping-img {
+  width: 100%;
+  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}

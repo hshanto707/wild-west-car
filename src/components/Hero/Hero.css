@@ -36,13 +36,14 @@
 .button-dark {
   background-color: transparent !important;
   border: 2px solid #222732 !important;
-  color: #222732;
+  color: #222732 !important;
   font-size: 20px !important;
   padding: 8px 40px !important;
 }
 
 .button-dark:hover {
   background-color: #ff4605 !important;
+  color: white !important;
   border: 2px solid #ff4605 !important;
 }
 

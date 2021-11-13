@@ -1,15 +1,14 @@
 import React from 'react';
-import useCartData from '../../hooks/useCartData';
+import useCarData from '../../hooks/useCarData';
 import CartCard from '../../components/CartCard/CartCard';
-import './AllOrders.css'
 
-const AllOrders = () => {
-  const [ cars ] = useCartData();
+const ManageCars = () => {
+  const [ cars ] = useCarData();
 
   console.log(cars);
   return (
     <div>
-      <h1 className="dash-title mb-3">ALL ORDERS /</h1>
+      <h1 className="dash-title mb-3">Manage Cars /</h1>
       <div className="all-car">
         {cars.map((car) => (
           <CartCard car={car} key={car._id}></CartCard>
@@ -19,4 +18,4 @@ const AllOrders = () => {
   );
 };
 
-export default AllOrders;
+export default ManageCars;
