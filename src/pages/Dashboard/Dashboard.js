@@ -18,20 +18,18 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-import useAuth from "./../../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import MakeAdmin from './../MakeAdmin/MakeAdmin';
-import AdminRoute from './../../Login/AdminRoute/AdminRoute';
-import AllOrders from "../../AllOrders/AllOrders";
-import MyOrders from "../../MyOrders/MyOrders";
-import Pay from "../../Pay/Pay";
-import DisplayCar from "../../../components/DisplayCar/DisplayCar";
+import AllOrders from "../AllOrders/AllOrders";
+import MyOrders from "../MyOrders/MyOrders";
+import Pay from "../Pay/Pay";
+import DisplayCar from "../../components/DisplayCar/DisplayCar";
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import AddCar from "../../AddCar/AddCar";
-import DashboardHome from "../../DashboardHome/DashboardHome";
-import ClientReview from "../../ClientReview/ClientReview"
-import ManageCars from "../../ManageCars/ManageCars";
+import AddCar from "../AddCar/AddCar";
+import DashboardHome from "../DashboardHome/DashboardHome";
+import ClientReview from "../ClientReview/ClientReview"
+import ManageCars from "../ManageCars/ManageCars";
+import AdminRoute from "../../components/AdminRoute/AdminRoute";
 
 const drawerWidth = 200;
 

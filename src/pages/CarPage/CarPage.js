@@ -47,9 +47,9 @@ const CarPage = () => {
     <div>
       <Header></Header>
       <div className="car-page container">
-      <div className="tour-hero">
-        <div className="tour-hero-bg">
-          <img src={img} alt="" className="tour-background my-4" />
+      <div>
+        <div>
+          <img src={img} alt="" className="my-4" />
         </div>
         <div className="">
           <h3>Description</h3>

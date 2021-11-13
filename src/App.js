@@ -4,15 +4,13 @@ import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Login/Login";
 import AllCars from "./pages/AllCars/AllCars";
-import MyOrders from "./pages/MyOrders/MyOrders";
 import Pay from "./pages/Pay/Pay";
 import CarPage from "./pages/CarPage/CarPage";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Register from "./pages/Register/Register";
-import AllOrders from "./pages/AllOrders/AllOrders";
-import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import AddCar from "./pages/AddCar/AddCar";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (

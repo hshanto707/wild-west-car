@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route,Redirect } from 'react-router-dom';
-import useAuth from './../../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 import  CircularProgress  from '@mui/material/CircularProgress';
 
 const AdminRoute = ({children,...rest}) => {
