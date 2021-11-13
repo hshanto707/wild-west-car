@@ -38,7 +38,7 @@ const CarPage = () => {
   const { uid } = user;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${id}`)
+    fetch(`https://limitless-everglades-07733.herokuapp.com/cars/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data))
       .catch((err) => console.log(err));
