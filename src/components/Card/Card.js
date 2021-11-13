@@ -5,12 +5,7 @@ import { Button } from "react-bootstrap";
 import './Card.css'
 
 const Card = (props) => {
-  const {_id, name, price, img, description, rating} = props.car;
-  const history = useHistory();
-  
-  // const { addToCart, AllContexts } = useAuth();
-  // const { user } = useFirebase();
-  // const { uid } = user;
+  const {_id, name, price, img, description} = props.car;
 
   return (
     <div className="card d-flex flex-column text-start">

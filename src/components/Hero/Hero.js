@@ -13,7 +13,7 @@ const Hero = () => {
         <h1 className="caption mb-sm-3">Find the Best Deal On Your Dream Car</h1>
         <p className="details mb-sm-3 w-75">We can help you find the best car. Check our reviews, compare models and find cars for sale.</p>
         <NavLink to="/all-cars">
-          <Button className="button-dark">About Us</Button>
+          <Button className="button-dark">View Listings</Button>
         </NavLink>
       </div>
     </div>
