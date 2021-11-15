@@ -103,11 +103,7 @@ const CarPage = () => {
         </div>
         <Button
           onClick={() => {
-            if (uid) {
-              addToCart(car);
-            } else {
-              history.push("/login");
-            }
+            addToCart(car);
           }}
           className="button-dark mt-3"
         >

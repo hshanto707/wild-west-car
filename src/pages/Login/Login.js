@@ -14,7 +14,7 @@ import './Login.css'
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, signInWithGoogle, loginUser, isLoading, authError } = useAuth();
+  const { user, loginUser, isLoading, authError } = useAuth();
 
   const location = useLocation();
   const history = useHistory();
@@ -30,10 +30,6 @@ const Login = () => {
     // alert("hello");
     loginUser(loginData.email, loginData.password, history, location);
     e.preventDefault();
-  };
-
-  const Login = () => {
-    signInWithGoogle(history, location);
   };
 
   return (

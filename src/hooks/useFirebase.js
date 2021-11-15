@@ -25,7 +25,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
   const auth = getAuth();
 
-  const registerUser = (email, password, name, history) => {
+  const registerUser = (email, password, name, history, location) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -40,10 +40,13 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => {})
+        .then(() => {
+          const destination = location?.state?.from || "/";
+          history.push(destination);
+          setAuthError(" ");
+        })
           .catch((error) => {});
         setUser(newUser);
-        history.replace("/");
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -57,7 +60,7 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const destination = location?.state?.from || "/";
-        history.replace(destination);
+        history.push(destination);
         setAuthError(" ");
       })
       .catch((error) => {

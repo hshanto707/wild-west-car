@@ -9,10 +9,6 @@ const Card = (props) => {
   const history = useHistory();
   
   const { removeFromCart, removeFromCar } = useCart();
-  
-  // const { addToCart, AllContexts } = useAuth();
-  // const { user } = useFirebase();
-  // const { uid } = user;
 
   return (
     <div className="card d-flex flex-column text-start">
