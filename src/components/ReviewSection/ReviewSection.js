@@ -13,7 +13,7 @@ const ReviewSection = () => {
   }, []);
 
   return (
-    <div className="container section-container text-center mb-5">
+    <div className="container section-container text-center">
       <h4 className="fw-bold text-start">See What Our Clients Say About Us</h4>
       <h1 className="fw-bold mb-5 text-start">All Reviews</h1>
       <div className="all-review">

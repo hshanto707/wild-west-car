@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  clip-path: polygon(0% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 .hero img {

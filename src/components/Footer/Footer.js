@@ -1,4 +1,4 @@
-import { faFacebookSquare, faInstagramSquare, faLinkedin, faTwitterSquare, faYoutube, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookSquare, faInstagramSquare, faLinkedin, faTwitterSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faGlobe, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -9,8 +9,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container footer-container">
-        <div>
-          <h3 className="footer-title text-white mb-4">About Us</h3>
+        <div className="text-start">
+          <h3 className="footer-logo text-white mb-4 text-center">
+            <img src="https://i.imgur.com/UrCwtMQ.png" alt="" className="logo-img w-25 mb-2" />
+            </h3>
           <div className="text-lg-start">
             <p className="footer-text">Wild West Cars is an reputated car dealership 
             <br />company of automobile industry in New York City.
@@ -20,11 +22,11 @@ const Footer = () => {
             <br />and locations.</p>
           </div>
           <div>
-            <Link className="footer-link"><FontAwesomeIcon className="footer-text me-2 mt-2" icon={faFacebookSquare} /></Link>
-            <Link className="footer-link"><FontAwesomeIcon className="footer-text me-2 mt-2" icon={faTwitterSquare} /></Link>
-            <Link className="footer-link"><FontAwesomeIcon className="footer-text me-2 mt-2" icon={faLinkedin} /></Link>
-            <Link className="footer-link"><FontAwesomeIcon className="footer-text me-2 mt-2" icon={faInstagramSquare} /></Link>
-            <Link className="footer-link"><FontAwesomeIcon className="footer-text me-2 mt-2" icon={faYoutubeSquare} /></Link>
+            <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faFacebookSquare} /></Link>
+            <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faTwitterSquare} /></Link>
+            <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faLinkedin} /></Link>
+            <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faInstagramSquare} /></Link>
+            <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faYoutubeSquare} /></Link>
           </div>
         </div>
         <div className="footer-section our-location">
@@ -51,14 +53,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title text-white mb-4">Car Brands</h3>
           <div>
-            <Link className="footer-link"><p className="footer-text">BMW</p></Link>
-            <Link className="footer-link"><p className="footer-text">Ferrari</p></Link>
-            <Link className="footer-link"><p className="footer-text">Lamborghini</p></Link>
-            <Link className="footer-link"><p className="footer-text">Audi</p></Link>
-            <Link className="footer-link"><p className="footer-text">Volvo</p></Link>
-            <Link className="footer-link"><p className="footer-text">Chevrolet</p></Link>
-            <Link className="footer-link"><p className="footer-text">Porsche</p></Link>
-            <Link className="footer-link"><p className="footer-text">Mercedes-Benz</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">BMW</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Ferrari</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Lamborghini</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Audi</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Volvo</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Chevrolet</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Porsche</p></Link>
+            <Link className="footer-link" to="/"><p className="footer-text">Mercedes-Benz</p></Link>
           </div>
         </div>
       </div>

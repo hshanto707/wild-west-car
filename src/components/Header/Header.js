@@ -17,10 +17,11 @@ const Header = () => {
         <Container className="navbar-container">
           <div className="d-flex">
             <NavLink
-              className="logo my-2 justify-content-between"
+              className="logo my-2 d-flex justify-content-between"
               style={{ width: "260px" }}
               to="/"
             >
+              <img src="https://i.imgur.com/UrCwtMQ.png" alt="" className="logo-img" />
               <span className="logo-text">Wild West Cars</span>
             </NavLink>
             <div className="ms-auto justify-content-between align-items-center">
@@ -43,14 +44,6 @@ const Header = () => {
                   <NavLink className="nav-item ms-sm-3" to="/dashboard">
                     Dashboard
                   </NavLink>
-                  {
-                    <span
-                      className="text-white fw-bold ms-sm-5"
-                      style={{ fontSize: "19px", marginTop: "-5px" }}
-                    >
-                      Hello {user.displayName}
-                    </span>
-                  }
                   <Button className="button-light ms-sm-5" onClick={logout}>
                     Log Out
                     <FontAwesomeIcon className="ms-2" icon={faUser} />

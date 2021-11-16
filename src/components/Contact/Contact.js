@@ -5,7 +5,7 @@ import './Contact.css'
 
 const Contact = () => {
   return (
-    <div className="contact-us  mt-5">
+    <div className="contact-us">
       <div className="container">
         <h1 className="main-caption text-white">Contact us</h1>
         <form>
@@ -35,9 +35,7 @@ const Contact = () => {
               ></textarea>
             </div>
           </div>
-          <Link>
-            <Button className="m-3 button-light px-5">Send</Button>
-          </Link>
+          <Button className="m-3 button-light px-5" type="reset">Send</Button>
         </form>
       </div>
     </div>

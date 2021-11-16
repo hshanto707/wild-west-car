@@ -20,7 +20,7 @@ const DisplayCar = () => {
         ))}
       </div>
       <NavLink to="/all-cars">
-        <Button className="button-dark my-3">See All</Button>
+        <Button className="button-dark mt-5">See All</Button>
       </NavLink>
     </div>
   );
