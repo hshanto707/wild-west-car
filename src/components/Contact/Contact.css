@@ -16,3 +16,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
+
+@media only screen and (max-width: 426px) {
+  .contact-button {
+    width: 100%;
+  }
+}

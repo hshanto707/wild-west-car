@@ -5,13 +5,13 @@ import './Contact.css'
 
 const Contact = () => {
   return (
-    <div className="contact-us">
-      <div className="container">
-        <h1 className="main-caption text-white">Contact us</h1>
+    <div className="contact-us w-100" id="contact-section">
+      <div className="container my-5">
+        <h1 className="main-caption text-white mb-5">Contact us</h1>
         <form>
-          <div className="row ">
-            <div className="m-3 d-flex">
-              <div className="col me-2">
+          <div className="row">
+            <div className="mb-3 d-sm-flex">
+              <div className="col me-sm-3 mb-3 mb-md-0">
                 <input
                   type="text"
                   class="form-control"
@@ -26,7 +26,7 @@ const Contact = () => {
                 />
               </div>
             </div>
-            <div class="form-group m-3">
+            <div class="form-group">
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
@@ -35,7 +35,7 @@ const Contact = () => {
               ></textarea>
             </div>
           </div>
-          <Button className="m-3 button-light px-5" type="reset">Send</Button>
+          <Button className="mt-3 button-light d-block contact-button px-5" type="reset">Send</Button>
         </form>
       </div>
     </div>

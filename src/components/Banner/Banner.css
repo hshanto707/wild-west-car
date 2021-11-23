@@ -10,21 +10,3 @@
   width: 100%;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 }
-
-.button-light {
-  background-color: transparent !important;
-  border: 2px solid white !important;
-  color: white !important;
-  font-size: 20px !important;
-  padding: 8px 40px !important;
-}
-
-.button-light:hover {
-  background-color: #ff4605 !important;
-  border: 2px solid #ff4605 !important;
-}
-
-.button-light:focus {
-  border: 2px solid white !important;
-  color: white;
-}

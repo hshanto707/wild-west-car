@@ -6,14 +6,14 @@ const ReviewSection = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://limitless-everglades-07733.herokuapp.com/review")
+    fetch("https://wild-west-cars.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div className="container section-container text-center">
+    <div className="container section-container text-center" id="review-section">
       <h4 className="fw-bold text-start">See What Our Clients Say About Us</h4>
       <h1 className="fw-bold mb-5 text-start">All Reviews</h1>
       <div className="all-review">

@@ -5,7 +5,7 @@ const useCarData = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    fetch("https://limitless-everglades-07733.herokuapp.com/cars")
+    fetch("https://wild-west-cars.herokuapp.com/cars")
       .then((res) => res.json())
       .then((data) => setCars(data))
       .catch((err) => console.log(err));

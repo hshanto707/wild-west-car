@@ -12,7 +12,7 @@ const AddCar = () => {
     } = useForm();
   
     const onSubmit = (data) => {
-      fetch("https://limitless-everglades-07733.herokuapp.com/cars", {
+      fetch("https://wild-west-cars.herokuapp.com/cars", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),

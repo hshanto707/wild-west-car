@@ -16,7 +16,7 @@ const ClientReview = () => {
 
   const onSubmit = (data) => {
     data.email = user?.email;
-    fetch("https://limitless-everglades-07733.herokuapp.com/review", {
+    fetch("https://wild-west-cars.herokuapp.com/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

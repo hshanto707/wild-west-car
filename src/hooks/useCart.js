@@ -7,7 +7,7 @@ const useCart = () => {
   const [bookedCar, setBookedCar] = useState([]);
 
   useEffect(() => {
-    fetch(`https://limitless-everglades-07733.herokuapp.com/cart/${uid}`)
+    fetch(`https://wild-west-cars.herokuapp.com/cart/${uid}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length) {
@@ -25,7 +25,7 @@ const useCart = () => {
     car.uid = uid;
     car.status = "pending";
 
-    fetch("https://limitless-everglades-07733.herokuapp.com/cart", {
+    fetch("https://wild-west-cars.herokuapp.com/cart", {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(car),
@@ -45,7 +45,7 @@ const useCart = () => {
   const removeFromCart = (id) => {
     const confirm = window.confirm("are you sure?");
     if(confirm) {
-      fetch(`https://limitless-everglades-07733.herokuapp.com/cart/${id}`, {
+      fetch(`https://wild-west-cars.herokuapp.com/cart/${id}`, {
       method: "delete",
     })
       .then((res) => res.json())
@@ -65,7 +65,7 @@ const useCart = () => {
   const removeFromCar = (id) => {
     const confirm = window.confirm("are you sure?");
     if(confirm) {
-      fetch(`https://limitless-everglades-07733.herokuapp.com/cars/${id}`, {
+      fetch(`https://wild-west-cars.herokuapp.com/cars/${id}`, {
       method: "delete",
     })
       .then((res) => res.json())
