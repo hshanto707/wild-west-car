@@ -10,3 +10,20 @@
   width: 100%;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 }
+
+@media only screen and (max-width: 426px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner-bg img {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+  }
+
+  .banner-text {
+    padding: 40px 0;
+    text-align: center;
+  }
+}
