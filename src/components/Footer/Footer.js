@@ -9,18 +9,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container footer-container">
-        <div className="text-start">
-          <h3 className="footer-logo text-white mb-4 text-center">
-            <img src="https://i.imgur.com/UrCwtMQ.png" alt="" className="logo-img w-25 mb-2" />
+        <div className="text-center text-md-start">
+          <h3 className="footer-logo text-white mb-4">
+            <img src="https://i.imgur.com/UrCwtMQ.png" alt="" className="logo-img w-50 mb-2 my-auto" />
             </h3>
-          <div className="text-lg-start">
-            <p className="footer-text">Wild West Cars is an reputated car dealership 
-            <br />company of automobile industry in New York City.
-            <br />
-            <br />We have 33 brunches, making it one of the largest
-            <br />car dealership company by number of members 
-            <br />and locations.</p>
-          </div>
           <div>
             <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faFacebookSquare} /></Link>
             <Link className="footer-link"><FontAwesomeIcon className="footer-text fs-2 me-3 mt-2" icon={faTwitterSquare} /></Link>
@@ -32,25 +24,25 @@ const Footer = () => {
         <div className="footer-section our-location">
           <h3 className="footer-title text-white mb-4">Our Location</h3>
           <div className="our-location-info">
-            <div className="text-start d-flex">
+            <div className="text-md-start d-flex">
               <FontAwesomeIcon className="text-white me-2 mt-2" icon={faHome} />
               <p className="footer-text">1730 M St. Suite 501, NYC, <br />New York, 20036 USA</p>
             </div>
-            <div className="text-start d-flex">
+            <div className="text-md-start d-flex">
               <FontAwesomeIcon className="text-white me-2 mt-2" icon={faPhone} />
               <p className="footer-text">12-02-0987 6543<br />12-02-3454 2458</p>
             </div>
-            <div className="text-start d-flex">
+            <div className="text-md-start d-flex">
               <FontAwesomeIcon className="text-white me-2 mt-1" icon={faEnvelope} />
               <p className="footer-text">hshanto707@gmail.com</p>
             </div>
-            <div className="text-start d-flex">
+            <div className="text-md-start d-flex">
               <FontAwesomeIcon className="text-white me-2 mt-1" icon={faGlobe} />
               <p className="footer-text">www.website.com</p>
             </div>
           </div>
         </div>
-        <div className="footer-section">
+        <div className="footer-section text-center text-md-start">
           <h3 className="footer-title text-white mb-4">Car Brands</h3>
           <div>
             <Link className="footer-link" to="/"><p className="footer-text">BMW</p></Link>

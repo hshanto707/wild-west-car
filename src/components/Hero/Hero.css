@@ -34,7 +34,7 @@
   color: #222732;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 767px) {
   /* .caption {
     font-size: 35px;
     font-weight: 700;
@@ -47,18 +47,31 @@
     margin-top: -25px;
     margin-bottom: -10px;
   } */
+}
 
+@media only screen and (max-width: 769px) {
+  .hero-text {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #222732;
+    width: 90%;
+    z-index: 3;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 426px) {
-
   .hero-text {
     position: absolute;
-top: 20%;
-left: 0;
-right: 0;
-bottom: 0;
-margin: auto;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     color: #222732;
     width: 90%;
     z-index: 3;

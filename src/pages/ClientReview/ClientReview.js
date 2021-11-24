@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { Container, Row, Col } from "react-bootstrap";
-import './ClientReview.css';
+import "./ClientReview.css";
 
 const ClientReview = () => {
   const { user } = useAuth();
@@ -30,28 +30,28 @@ const ClientReview = () => {
   return (
     <Container className="mx-0">
       <Row className="m-0 ">
-        <Col sm={12} md={5} className="m-auto">
-        <div className="login-form">
+        <Col sm={12} md={5} className="m-auto mb-4">
+          <div className="login-form text-center">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("name")}
                 placeholder="Display Name"
                 Required
-                className="p-3 mb-2 w-50 input-style border border-2 rounded border-dark"
+                className="p-3 mb-2 w-100 input-style border border-2 rounded border-dark"
               />
               <br />
               <input
                 {...register("profession")}
                 placeholder="your profession"
                 Required
-                className="p-3 mb-2 w-50 input-style border border-2 rounded border-dark"
+                className="p-3 mb-2 w-100 input-style border border-2 rounded border-dark"
               />
               <br />
               <input
                 {...register("description")}
                 placeholder="Write Your Review"
                 Required
-                className="p-3 pb-5 w-50 border border-2 rounded border-dark"
+                className="p-3 pb-5 w-100 border border-2 rounded border-dark"
               />
               <br />
               <input
@@ -61,7 +61,7 @@ const ClientReview = () => {
                 min="1"
                 max="5"
                 Required
-                className="p-3 w-50 mt-2 input-style border border-2 rounded border-dark"
+                className="p-3 w-100 mt-2 input-style border border-2 rounded border-dark"
               />
               <br />
               {errors.Required && <span>This field is required</span>}
@@ -69,13 +69,13 @@ const ClientReview = () => {
               <input
                 type="submit"
                 value="Submit"
-                className="button-dark mt-2 w-50"
+                className="button-dark mt-2 w-100"
               />
             </form>
           </div>
         </Col>
         <Col sm={12} md={7} className="ms-auto">
-        <div>
+          <div>
             <img
               src="https://i.imgur.com/yhpB3Iq.png"
               alt=""

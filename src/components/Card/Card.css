@@ -27,3 +27,9 @@
   font-size: 28px;
   color: #ff4605;
 }
+
+@media only screen and (max-width: 426px) {
+  .card {
+    width: 90%;
+  }
+}
