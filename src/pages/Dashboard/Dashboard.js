@@ -46,7 +46,7 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <NavLink className="nav-item text-dark text-center" to="/">
-        <h1 className="mt-2" style={{color: "#ff4605", fontWeight: "bold"}}>Home</h1>
+        <img src="https://i.imgur.com/uRBhnc6.png" alt="" style={{width: "85px", padding: '10px 0 5px', margin: '0 50px'}} />
       </NavLink>
       <Divider className="mt-1" />
       { !admin && <Link to={`${url}/my-orders`} style={{ textDecoration: "none", color: "#ff4605" }}>
